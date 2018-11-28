@@ -1,4 +1,6 @@
+
 from turtle import Turtle
+'''
 class Square(Turtle):
 	def __init__(self,size,color):
 		Turtle.__init__(self)
@@ -26,3 +28,9 @@ def move_forward():
 move_forward()
 
 turtle.mainloop()
+'''
+class Hexagon():
+	def __init__ (self,size,colour)
+	turtle.begin
+	
+ 
