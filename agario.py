@@ -45,20 +45,27 @@ for i in range (NUMBER_OF_BALLS):
 	def collide(ball_a, ball_b):
 		if ball_a == ball_b:
 			return False
+		current_x1 = ball_a.xcor()
+		current_y1 = ball_a.ycor()
+
+					
+		current_x2 = ball_b.xcor()
+		current_y2 = ball_b.ycor()
+
+
 		d = ((ball_a,xcor()-ball_b.xcor())**2 + (ball_a.ycor()-ball_b.ycor()**2))**0.5
 		if (d< ball_a.r + ball_b.r):
 			return True
 		else:
 			return False
-
 	def check_all_balls_collision():
 		for ball_a in BALLS:
 			for ball_b in BALLS:
 				collide(ball_a, ball_b)
 
-	if collide(ball_a, ball_b)== True:
-		r1 = ball_a.r
-		r2 = ball_b.r
+		if collide(ball_a, ball_b)== True:
+			r1 = ball_a.r
+			r2 = ball_b.r
 
 
 
@@ -81,9 +88,7 @@ for i in range (NUMBER_OF_BALLS):
 
 				ball_a.shapesize(ball_a.r/10)
 				ball_b.shapesize(ball_b.r/10)
-	points2 = turtle.Turtle()
-	points.hideturtle()
-	pints2.penup()
+	
 
 	def check_myball_collision():
 		global score
@@ -111,10 +116,7 @@ for i in range (NUMBER_OF_BALLS):
 									player.shapesize(player.r/10)
 									ball_a.shapesize(ball_a.r/10)
 									
-									points2.goto(0,300)
-									score += 1
-									points2.clear()
-									points2.write(str("Your score is : " + str(score)), move = True, align = "center", font = ("Arial", 20, "normal"))
+								
 
 
 
@@ -136,11 +138,11 @@ for i in range (NUMBER_OF_BALLS):
 
 
 	while RUNNING:
-		move_all_balls()
-		myball_collision()
-		check_all_balls()
-		turtle.update()
-		time.sleep(SLEEP)
+					move_all_balls(BALLS)
+					check_myball_collision()
+					check_all_balls_collision()
+					turtle.update()
+					time.sleep(SLEEP)
 turtle.onescreenclick(clicked)
 
 turtle.mainloop()
