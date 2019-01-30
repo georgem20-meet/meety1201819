@@ -58,7 +58,9 @@ for i in range (NUMBER_OF_BALLS):
 
 	if collide(ball_a, ball_b)== True:
 		r1 = ball_a.r
-		r2 = ballb.r
+		r2 = ball_b.r
+
+
 
 		x = random.randint(-SCREEN_WIDTH + MAXIMUM_BALL_RADIUS, SCREEN_WIDTH - MAXIMUM_BALL_RADIUS)
 		y = random.randint(-SCREEN_HEIGHT + MAXIMUM_BALL_RADIUS, SCREEN_HEIGHT - MAXIMUM_BALL_RADIUS)
